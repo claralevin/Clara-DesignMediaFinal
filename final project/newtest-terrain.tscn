@@ -1,0 +1,763 @@
+[gd_scene load_steps=53 format=3 uid="uid://hsjcpdwowdwc"]
+
+[ext_resource type="FontFile" uid="uid://duwntbw4h6bef" path="res://ABCFavorit-Bold-Trial.otf" id="1_p4tkq"]
+[ext_resource type="Script" path="res://birdsarea3d.gd" id="1_soskq"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_wgowj"]
+[ext_resource type="Resource" path="res://addons/zylann.hterrain/data.hterrain" id="2_1lsis"]
+[ext_resource type="Script" path="res://cricketsarea3d.gd" id="2_mvw5p"]
+[ext_resource type="Script" path="res://windarea3d.gd" id="3_t1nuw"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="4_boor2"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="4_krcih"]
+[ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="5_3ds10"]
+[ext_resource type="Script" path="res://xarea.gd" id="5_cpc84"]
+[ext_resource type="Texture2D" uid="uid://c4ggdp0kg5wjk" path="res://addons/simplegrasstextured/textures/grassbushcc008.png" id="6_43f7b"]
+[ext_resource type="Script" path="res://control box open_close.gd" id="6_i415s"]
+[ext_resource type="PackedScene" uid="uid://c24jxy6liaimf" path="res://tree.tscn" id="7_fp62r"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand.gd" id="9_swe5j"]
+[ext_resource type="AudioStream" uid="uid://dkoo8tv8nyomp" path="res://sounds/Wind Sound SOUND EFFECT - No Copyright[Download Free] [ ezmp3.cc ].mp3" id="13_gbseb"]
+[ext_resource type="AudioStream" uid="uid://bu8pg111s3rak" path="res://sounds/Crickets Night Time Sound FX [ ezmp3.cc ].mp3" id="14_apbre"]
+[ext_resource type="AudioStream" uid="uid://vr363dxlx48u" path="res://sounds/Mourning Dove Coo [ ezmp3.cc ].mp3" id="15_m17ow"]
+[ext_resource type="Texture2D" uid="uid://dmqkv1j4ds8go" path="res://images/number3.png" id="16_wrs76"]
+[ext_resource type="AudioStream" uid="uid://cevwj2n1uiwiv" path="res://sounds/#3 [ ezmp3.cc ].mp3" id="17_w8f8f"]
+[ext_resource type="Script" path="res://pausearea.gd" id="18_iyqbt"]
+[ext_resource type="Script" path="res://playarea.gd" id="19_0jt2a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tq3ag"]
+transparency = 1
+cull_mode = 1
+albedo_color = Color(0.137255, 0.760784, 1, 0.372549)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17aip"]
+next_pass = SubResource("StandardMaterial3D_tq3ag")
+transparency = 1
+blend_mode = 1
+depth_draw_mode = 2
+no_depth_test = true
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.254902, 0.0627451, 0.941176, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmper"]
+transparency = 1
+blend_mode = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ei3f3"]
+size = Vector3(0.189331, 0.171997, 0.0513306)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1vhpi"]
+albedo_color = Color(0, 0.207843, 0.207843, 1)
+backlight = Color(1, 1, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_0r2mi"]
+material = SubResource("StandardMaterial3D_1vhpi")
+text = "Cricket
+Sounds"
+font = ExtResource("1_p4tkq")
+font_size = 6
+line_spacing = -2.0
+depth = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jg43l"]
+albedo_color = Color(0, 0.207843, 0.207843, 1)
+backlight = Color(1, 1, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_bxfyo"]
+material = SubResource("StandardMaterial3D_jg43l")
+text = "Soft
+Wind"
+font = ExtResource("1_p4tkq")
+font_size = 6
+line_spacing = -2.0
+depth = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_md0je"]
+albedo_color = Color(0, 0.207843, 0.207843, 1)
+backlight = Color(1, 1, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_iymvy"]
+material = SubResource("StandardMaterial3D_md0je")
+text = "Birds"
+font = ExtResource("1_p4tkq")
+font_size = 6
+line_spacing = -2.0
+depth = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yt1yj"]
+
+[sub_resource type="TextMesh" id="TextMesh_vb0k0"]
+material = SubResource("StandardMaterial3D_yt1yj")
+text = "X"
+font = ExtResource("1_p4tkq")
+font_size = 12
+depth = 0.02
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6uou8"]
+size = Vector3(0.104736, 0.109711, 0.0932617)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_url11"]
+transparency = 1
+cull_mode = 1
+albedo_color = Color(0.137255, 0.760784, 1, 0.372549)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qmp2c"]
+next_pass = SubResource("StandardMaterial3D_url11")
+transparency = 1
+blend_mode = 1
+depth_draw_mode = 2
+no_depth_test = true
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.254902, 0.0627451, 0.941176, 1)
+metallic = 1.0
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kwe87"]
+sky_top_color = Color(0.145098, 0.196078, 0.462745, 1)
+sky_horizon_color = Color(0.670588, 0.533333, 0.211765, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.530392, 0.553922, 0.606863, 1)
+
+[sub_resource type="Sky" id="Sky_yvw7w"]
+sky_material = SubResource("ProceduralSkyMaterial_kwe87")
+
+[sub_resource type="Environment" id="Environment_ov7fm"]
+background_mode = 2
+sky = SubResource("Sky_yvw7w")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Shader" id="Shader_wbm32"]
+code = "shader_type spatial;
+
+// This is a shader with less textures, in case the main one doesn't run on your GPU.
+// It's mostly a big copy/paste, because Godot doesn't support #include or #ifdef...
+
+#include \"include/heightmap.gdshaderinc\"
+
+uniform sampler2D u_terrain_heightmap;
+uniform sampler2D u_terrain_normalmap;
+// I had to remove `hint_albedo` from colormap in Godot 3 because it makes sRGB conversion kick in,
+// which snowballs to black when doing GPU painting on that texture...
+uniform sampler2D u_terrain_colormap;// : hint_albedo;
+uniform sampler2D u_terrain_splatmap;
+uniform mat4 u_terrain_inverse_transform;
+uniform mat3 u_terrain_normal_basis;
+
+uniform sampler2D u_ground_albedo_bump_0 : source_color;
+uniform sampler2D u_ground_albedo_bump_1 : source_color;
+uniform sampler2D u_ground_albedo_bump_2 : source_color;
+uniform sampler2D u_ground_albedo_bump_3 : source_color;
+
+uniform float u_ground_uv_scale = 20.0;
+uniform bool u_depth_blending = true;
+uniform bool u_triplanar = false;
+// Each component corresponds to a ground texture. Set greater than zero to enable.
+uniform vec4 u_tile_reduction = vec4(0.0, 0.0, 0.0, 0.0);
+
+varying vec4 v_tint;
+varying vec4 v_splat;
+varying vec3 v_ground_uv;
+
+
+vec3 unpack_normal(vec4 rgba) {
+	vec3 n = rgba.xzy * 2.0 - vec3(1.0);
+	// Had to negate Z because it comes from Y in the normal map,
+	// and OpenGL-style normal maps are Y-up.
+	n.z *= -1.0;
+	return n;
+}
+
+// Blends weights according to the bump of detail textures,
+// so for example it allows to have sand fill the gaps between pebbles
+vec4 get_depth_blended_weights(vec4 splat, vec4 bumps) {
+	float dh = 0.2;
+
+	vec4 h = bumps + splat;
+	
+	// TODO Keep improving multilayer blending, there are still some edge cases...
+	// Mitigation: nullify layers with near-zero splat
+	h *= smoothstep(0, 0.05, splat);
+	
+	vec4 d = h + dh;
+	d.r -= max(h.g, max(h.b, h.a));
+	d.g -= max(h.r, max(h.b, h.a));
+	d.b -= max(h.g, max(h.r, h.a));
+	d.a -= max(h.g, max(h.b, h.r));
+	
+	return clamp(d, 0, 1);
+}
+
+vec3 get_triplanar_blend(vec3 world_normal) {
+	vec3 blending = abs(world_normal);
+	blending = normalize(max(blending, vec3(0.00001))); // Force weights to sum to 1.0
+	float b = blending.x + blending.y + blending.z;
+	return blending / vec3(b, b, b);
+}
+
+vec4 texture_triplanar(sampler2D tex, vec3 world_pos, vec3 blend) {
+	vec4 xaxis = texture(tex, world_pos.yz);
+	vec4 yaxis = texture(tex, world_pos.xz);
+	vec4 zaxis = texture(tex, world_pos.xy);
+	// blend the results of the 3 planar projections.
+	return xaxis * blend.x + yaxis * blend.y + zaxis * blend.z;
+}
+
+vec4 depth_blend2(vec4 a, vec4 b, float t) {
+	// https://www.gamasutra.com
+	// /blogs/AndreyMishkinis/20130716/196339/Advanced_Terrain_Texture_Splatting.php
+	float d = 0.1;
+	float ma = max(a.a + (1.0 - t), b.a + t) - d;
+	float ba = max(a.a + (1.0 - t) - ma, 0.0);
+	float bb = max(b.a + t - ma, 0.0);
+	return (a * ba + b * bb) / (ba + bb);
+}
+
+vec4 texture_antitile(sampler2D tex, vec2 uv) {
+	float frequency = 2.0;
+	float scale = 1.3;
+	float sharpness = 0.7;
+	
+	// Rotate and scale UV
+	float rot = 3.14 * 0.6;
+	float cosa = cos(rot);
+	float sina = sin(rot);
+	vec2 uv2 = vec2(cosa * uv.x - sina * uv.y, sina * uv.x + cosa * uv.y) * scale;
+	
+	vec4 col0 = texture(tex, uv);
+	vec4 col1 = texture(tex, uv2);
+	//col0 = vec4(0.0, 0.0, 1.0, 1.0);
+	// Periodically alternate between the two versions using a warped checker pattern
+	float t = 0.5 + 0.5 
+		* sin(uv2.x * frequency + sin(uv.x) * 2.0) 
+		* cos(uv2.y * frequency + sin(uv.y) * 2.0);
+	// Using depth blend because classic alpha blending smoothes out details
+	return depth_blend2(col0, col1, smoothstep(0.5 * sharpness, 1.0 - 0.5 * sharpness, t));
+}
+
+void vertex() {
+	vec2 cell_coords = (u_terrain_inverse_transform * MODEL_MATRIX * vec4(VERTEX, 1)).xz;
+	// Must add a half-offset so that we sample the center of pixels,
+	// otherwise bilinear filtering of the textures will give us mixed results.
+	cell_coords += vec2(0.5);
+
+	// Normalized UV
+	UV = cell_coords / vec2(textureSize(u_terrain_heightmap, 0));
+	
+	// Height displacement
+	float h = sample_heightmap(u_terrain_heightmap, UV);
+	VERTEX.y = h;
+
+	v_ground_uv = vec3(cell_coords.x, h * MODEL_MATRIX[1][1], cell_coords.y) / u_ground_uv_scale;
+	
+	// Putting this in vertex saves 2 fetches from the fragment shader,
+	// which is good for performance at a negligible quality cost,
+	// provided that geometry is a regular grid that decimates with LOD.
+	// (downside is LOD will also decimate tint and splat, but it's not bad overall)
+	v_tint = texture(u_terrain_colormap, UV);
+	v_splat = texture(u_terrain_splatmap, UV);
+	
+	// Need to use u_terrain_normal_basis to handle scaling.
+	NORMAL = u_terrain_normal_basis * unpack_normal(texture(u_terrain_normalmap, UV));
+}
+
+void fragment() {
+	if (v_tint.a < 0.5) {
+		// TODO Add option to use vertex discarding instead, using NaNs
+		discard;
+	}
+	
+	vec3 terrain_normal_world = 
+		u_terrain_normal_basis * unpack_normal(texture(u_terrain_normalmap, UV));
+	terrain_normal_world = normalize(terrain_normal_world);
+
+	// TODO Detail should only be rasterized on nearby chunks (needs proximity management to switch shaders)
+	
+	vec2 ground_uv = v_ground_uv.xz;
+	
+	vec4 ab0, ab1, ab2, ab3;
+	if (u_triplanar) {
+		// Only do triplanar on one texture slot,
+		// because otherwise it would be very expensive and cost many more ifs.
+		// I chose the last slot because first slot is the default on new splatmaps,
+		// and that's a feature used for cliffs, which are usually designed later.
+
+		vec3 blending = get_triplanar_blend(terrain_normal_world);
+
+		ab3 = texture_triplanar(u_ground_albedo_bump_3, v_ground_uv, blending);
+
+	} else {
+		if (u_tile_reduction[3] > 0.0) {
+			ab3 = texture(u_ground_albedo_bump_3, ground_uv);
+		} else {
+			ab3 = texture_antitile(u_ground_albedo_bump_3, ground_uv);
+		}
+	}
+	
+	if (u_tile_reduction[0] > 0.0) {
+		ab0 = texture_antitile(u_ground_albedo_bump_0, ground_uv);
+	} else {
+		ab0 = texture(u_ground_albedo_bump_0, ground_uv);
+	}
+	if (u_tile_reduction[1] > 0.0) {
+		ab1 = texture_antitile(u_ground_albedo_bump_1, ground_uv);
+	} else {
+		ab1 = texture(u_ground_albedo_bump_1, ground_uv);
+	}
+	if (u_tile_reduction[2] > 0.0) {
+		ab2 = texture_antitile(u_ground_albedo_bump_2, ground_uv);
+	} else {
+		ab2 = texture(u_ground_albedo_bump_2, ground_uv);
+	}
+	
+	vec3 col0 = ab0.rgb;
+	vec3 col1 = ab1.rgb;
+	vec3 col2 = ab2.rgb;
+	vec3 col3 = ab3.rgb;
+	
+	vec4 w;
+	// TODO An #ifdef macro would be nice! Or copy/paste everything in a different shader...
+	if (u_depth_blending) {
+		w = get_depth_blended_weights(v_splat, vec4(ab0.a, ab1.a, ab2.a, ab3.a));
+	} else {
+		w = v_splat.rgba;
+	}
+	
+	float w_sum = (w.r + w.g + w.b + w.a);
+	
+	ALBEDO = v_tint.rgb * (
+		w.r * col0.rgb + 
+		w.g * col1.rgb + 
+		w.b * col2.rgb + 
+		w.a * col3.rgb) / w_sum;
+	
+	ROUGHNESS = 1.0;
+	
+	NORMAL = (VIEW_MATRIX * (vec4(terrain_normal_world, 0.0))).xyz;
+
+	//ALBEDO = w.rgb;
+	//ALBEDO = v_ground_uv.xyz;
+}
+
+"
+
+[sub_resource type="Resource" id="Resource_4uxyo"]
+script = ExtResource("4_krcih")
+mode = 0
+textures = [[], []]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pj6if"]
+radius = 0.014075
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwf0k"]
+albedo_color = Color(0, 0.207843, 0.207843, 1)
+backlight = Color(1, 1, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_kptpi"]
+material = SubResource("StandardMaterial3D_gwf0k")
+text = "Now Playing...
+#3 - Aphex Twin"
+font = ExtResource("1_p4tkq")
+font_size = 5
+line_spacing = -2.0
+depth = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mchrb"]
+albedo_color = Color(0, 0.207843, 0.207843, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vxqkq"]
+material = SubResource("StandardMaterial3D_mchrb")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yqkdd"]
+size = Vector3(1.0675, 1.04297, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jif4r"]
+albedo_color = Color(0, 0.207843, 0.207843, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_y5uuh"]
+material = SubResource("StandardMaterial3D_jif4r")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u3tcr"]
+size = Vector3(1, 0.688538, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4enwh"]
+albedo_color = Color(0, 0.207843, 0.207843, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_csfa2"]
+material = SubResource("StandardMaterial3D_4enwh")
+
+[node name="the world" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.0528395, -0.120062, -0.991359, 0.0167931, 0.992713, -0.11933, 0.998462, -0.0103426, 0.0544707, 49.1575, 32.7417, 177.16)
+fov = 58.594
+
+[node name="control box" type="CSGBox3D" parent="Camera3D"]
+transform = Transform3D(0.0701975, 0.00626494, 0.997513, 0.0310713, 0.999482, -0.00846388, -0.997049, 0.0315887, 0.0699664, 0.0182648, -0.0585327, -1.56709)
+use_collision = true
+flip_faces = true
+size = Vector3(0.288086, 1, 1)
+material = SubResource("StandardMaterial3D_17aip")
+
+[node name="birds" type="CSGBox3D" parent="Camera3D/control box"]
+transform = Transform3D(0.00968686, -0.0311875, -0.999469, -0.00175403, 0.999547, -0.0312116, 0.999985, 0.00205402, 0.00962461, -0.134354, 0.256123, -0.302002)
+size = Vector3(0.238525, 0.223465, 0.085022)
+material = SubResource("StandardMaterial3D_fmper")
+
+[node name="birdsarea3d" type="Area3D" parent="Camera3D/control box/birds"]
+script = ExtResource("1_soskq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/control box/birds/birdsarea3d"]
+transform = Transform3D(1, -4.99855e-08, -5.37863e-07, 3.44118e-11, 1, -1.08094e-07, -3.97452e-10, -1.45628e-06, 1, 0.00218201, -0.00142288, 0.0251465)
+shape = SubResource("BoxShape3D_ei3f3")
+
+[node name="crickets2" type="CSGBox3D" parent="Camera3D/control box"]
+transform = Transform3D(0.00968686, -0.0311875, -0.999469, -0.00175404, 0.999548, -0.0312116, 0.999985, 0.00205403, 0.00962461, -0.135033, 0.256571, -0.0160065)
+size = Vector3(0.238525, 0.223465, 0.085022)
+material = SubResource("StandardMaterial3D_fmper")
+
+[node name="cricketsarea3d" type="Area3D" parent="Camera3D/control box/crickets2"]
+script = ExtResource("2_mvw5p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/control box/crickets2/cricketsarea3d"]
+transform = Transform3D(1, -4.99727e-08, -5.38214e-07, -3.72324e-11, 1, -1.00986e-07, -3.41624e-10, -1.45036e-06, 1, 0.00218201, -0.00142288, 0.0251465)
+shape = SubResource("BoxShape3D_ei3f3")
+
+[node name="wind2" type="CSGBox3D" parent="Camera3D/control box"]
+transform = Transform3D(0.00968686, -0.0311874, -0.999469, -0.00175404, 0.999548, -0.0312116, 0.999986, 0.00205403, 0.00962462, -0.135033, 0.256573, 0.282578)
+size = Vector3(0.238525, 0.223465, 0.085022)
+material = SubResource("StandardMaterial3D_fmper")
+
+[node name="windarea3d" type="Area3D" parent="Camera3D/control box/wind2"]
+script = ExtResource("3_t1nuw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/control box/wind2/windarea3d"]
+transform = Transform3D(1, -4.99855e-08, -5.37863e-07, 3.44118e-11, 1, -1.08094e-07, -3.97452e-10, -1.45628e-06, 1, 0.00218201, -0.00142288, 0.0251465)
+shape = SubResource("BoxShape3D_ei3f3")
+
+[node name="player base" type="CSGBox3D" parent="Camera3D/control box"]
+transform = Transform3D(0.00968681, -0.0311887, -0.999472, -0.00175406, 0.999556, -0.0312119, 0.999995, 0.00205404, 0.00962474, -0.130302, -0.160292, -0.00909424)
+size = Vector3(0.804382, 0.525795, 0.085022)
+material = SubResource("StandardMaterial3D_fmper")
+
+[node name="crickets" type="MeshInstance3D" parent="Camera3D/control box"]
+transform = Transform3D(-0.0821823, -0.177717, -0.980646, -0.0275126, 0.984002, -0.17602, 0.996242, 0.0125143, -0.085757, -0.197144, 0.255955, -0.0236816)
+cast_shadow = 0
+mesh = SubResource("TextMesh_0r2mi")
+skeleton = NodePath("../X")
+
+[node name="wind" type="MeshInstance3D" parent="Camera3D/control box"]
+transform = Transform3D(-0.071254, -4.43302e-08, -0.997461, -6.52759e-08, 1, 6.66235e-08, 0.997462, 6.5418e-08, -0.0712539, -0.196835, 0.257568, 0.275574)
+cast_shadow = 0
+mesh = SubResource("TextMesh_bxfyo")
+skeleton = NodePath("../X")
+
+[node name="Birds" type="MeshInstance3D" parent="Camera3D/control box"]
+transform = Transform3D(0.0465615, 0.000344568, -0.998917, 0.0102275, 0.999947, 0.000821669, 0.998867, -0.0102546, 0.0465546, -0.196911, 0.255959, -0.297607)
+cast_shadow = 0
+mesh = SubResource("TextMesh_iymvy")
+skeleton = NodePath("../X")
+
+[node name="X" type="MeshInstance3D" parent="Camera3D/control box"]
+transform = Transform3D(-0.211462, -4.99315e-08, -0.977387, -7.73505e-08, 1, -3.43516e-08, 0.97739, 6.83374e-08, -0.211461, -0.176544, 0.489258, 0.486862)
+mesh = SubResource("TextMesh_vb0k0")
+
+[node name="xarea" type="Area3D" parent="Camera3D/control box/X"]
+script = ExtResource("5_cpc84")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/control box/X/xarea"]
+transform = Transform3D(1, 3.94413e-09, 2.73087e-08, 8.51774e-08, 1, 4.42022e-07, -8.55882e-08, -3.58007e-09, 1, -0.00288391, 0.0140991, 0.0137482)
+shape = SubResource("BoxShape3D_6uou8")
+
+[node name="control box open_close" type="CSGBox3D" parent="Camera3D"]
+transform = Transform3D(0.0701992, 0.00626529, 0.99753, 0.0310687, 0.999505, -0.00846395, -0.997072, 0.0315889, 0.0699681, -0.73587, -0.379776, -0.922573)
+use_collision = true
+flip_faces = true
+size = Vector3(0.0625, 0.0506592, 0.0534668)
+material = SubResource("StandardMaterial3D_qmp2c")
+script = ExtResource("6_i415s")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ov7fm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.184681, -0.637305, -0.748155, -0.975191, -0.213362, -0.0589751, -0.122043, 0.740486, -0.660898, 112.528, 70.4264, 59.4991)
+light_color = Color(0.933333, 0.87451, 0.588235, 1)
+light_angular_distance = 5.8
+shadow_enabled = true
+shadow_blur = 0.0
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_wgowj")
+ambient_wind = 0.029
+map_scale = Vector3(0.5, 0.5, 0.5)
+_terrain_data = ExtResource("2_1lsis")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = SubResource("Shader_wbm32")
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_4uxyo")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+
+[node name="HTerrainDetailLayer" type="Node3D" parent="HTerrain"]
+script = ExtResource("4_boor2")
+layer_index = 1
+texture = ExtResource("6_43f7b")
+view_distance = 300.0
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = null
+shader_params/u_roughness = null
+metadata/_editor_icon = ExtResource("5_3ds10")
+
+[node name="trees" type="Node3D" parent="."]
+
+[node name="tree" parent="trees" instance=ExtResource("7_fp62r")]
+
+[node name="tree32" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00499998, -8.7114e-06, 8.72663e-06, 8.72663e-06, 0.00499998, -8.72664e-06, -8.7114e-06, 8.74185e-06, 0.00499998, 67.6201, 23.2851, 181.545)
+
+[node name="tree33" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00175731, -1.1237e-05, -0.00468099, 8.72663e-06, 0.00499998, -8.72664e-06, 0.004681, -5.10278e-06, 0.00175732, 67.6201, 18.972, 178.826)
+
+[node name="tree35" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00499998, -8.7114e-06, 8.72663e-06, 8.72663e-06, 0.00499998, -8.72664e-06, -8.7114e-06, 8.74185e-06, 0.00499998, 75.7427, 15.4739, 173.645)
+
+[node name="tree36" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00175731, -1.1237e-05, -0.00468099, 8.72663e-06, 0.00499998, -8.72664e-06, 0.004681, -5.10278e-06, 0.00175732, 75.7427, 11.1608, 170.926)
+
+[node name="tree34" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00175731, -1.1237e-05, -0.00468099, 8.72663e-06, 0.00499998, -8.72664e-06, 0.004681, -5.10278e-06, 0.00175732, 73.2673, 18.972, 164.626)
+
+[node name="tree5" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 147.664, 26.973, 168.869)
+
+[node name="tree6" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 147.285, 34.124, 174.1)
+
+[node name="tree7" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 147.285, 34.124, 164.1)
+
+[node name="tree37" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00421373, -0.00103997, -0.00248252, 0.00128041, 0.00483096, 0.000149549, 0.00236748, -0.00076176, 0.00433759, 173.205, 29.9863, 133.901)
+
+[node name="tree38" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00421373, -0.00103997, -0.00248252, 0.00128041, 0.00483096, 0.000149549, 0.00236748, -0.00076176, 0.00433759, 170.304, 37.1373, 138.27)
+
+[node name="tree39" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00421373, -0.00103997, -0.00248252, 0.00128041, 0.00483096, 0.000149549, 0.00236748, -0.00076176, 0.00433759, 175.219, 37.1373, 129.561)
+
+[node name="tree29" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00491584, -0.000829277, -0.000383084, 0.000891544, 0.0048123, 0.00102316, 0.000199007, -0.00107425, 0.00487917, 177.445, 27.0143, 123.786)
+
+[node name="tree30" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00491584, -0.000829277, -0.000383084, 0.000891544, 0.0048123, 0.00102316, 0.000199007, -0.00107425, 0.00487917, 177.324, 34.9778, 127.685)
+
+[node name="tree31" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00491584, -0.000829277, -0.000383084, 0.000891544, 0.0048123, 0.00102316, 0.000199007, -0.00107425, 0.00487917, 178.057, 33.2288, 117.867)
+
+[node name="tree49" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00491584, -0.000829277, -0.000383084, 0.000891544, 0.0048123, 0.00102316, 0.000199007, -0.00107425, 0.00487917, 149.915, 19.5343, 156.782)
+
+[node name="tree50" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00491584, -0.000829277, -0.000383084, 0.000891544, 0.0048123, 0.00102316, 0.000199007, -0.00107425, 0.00487917, 149.793, 27.4978, 160.682)
+
+[node name="tree51" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00491584, -0.000829277, -0.000383084, 0.000891544, 0.0048123, 0.00102316, 0.000199007, -0.00107425, 0.00487917, 150.526, 25.7488, 150.863)
+
+[node name="tree43" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(-0.00383246, 0.000920528, 0.00307649, 0.00128041, 0.00483096, 0.000149549, -0.00294495, 0.000902462, -0.00393863, 156.72, 29.9863, 176.389)
+
+[node name="tree44" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(-0.00383246, 0.000920528, 0.00307649, 0.00128041, 0.00483096, 0.000149549, -0.00294495, 0.000902462, -0.00393863, 160.215, 37.1373, 172.479)
+
+[node name="tree45" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(-0.00383246, 0.000920528, 0.00307649, 0.00128041, 0.00483096, 0.000149549, -0.00294495, 0.000902462, -0.00393863, 154.107, 37.1373, 180.397)
+
+[node name="tree46" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(-0.00483704, 0.000667373, 0.00107591, 0.000891544, 0.0048123, 0.00102316, -0.000898958, 0.00118166, -0.00477446, 151.078, 27.0143, 185.795)
+
+[node name="tree47" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(-0.00483704, 0.000667373, 0.00107591, 0.000891544, 0.0048123, 0.00102316, -0.000898958, 0.00118166, -0.00477446, 151.756, 34.9778, 181.953)
+
+[node name="tree48" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(-0.00483704, 0.000667373, 0.00107591, 0.000891544, 0.0048123, 0.00102316, -0.000898958, 0.00118166, -0.00477446, 149.628, 33.2288, 191.566)
+
+[node name="tree40" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00442806, -0.000331705, -0.00229831, 0.000891544, 0.0048123, 0.00102316, 0.00214416, -0.00131593, 0.00432098, 161.784, 19.7888, 146.273)
+
+[node name="tree41" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00442806, -0.000331705, -0.00229831, 0.000891544, 0.0048123, 0.00102316, 0.00214416, -0.00131593, 0.00432098, 160.116, 27.7523, 149.801)
+
+[node name="tree42" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00442806, -0.000331705, -0.00229831, 0.000891544, 0.0048123, 0.00102316, 0.00214416, -0.00131593, 0.00432098, 164.706, 26.0034, 141.09)
+
+[node name="tree26" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 147.664, 4.22737, 131.281)
+
+[node name="tree27" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 147.285, 11.3784, 136.511)
+
+[node name="tree28" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 147.285, 11.3784, 126.511)
+
+[node name="tree23" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 120.581, 11.505, 182.7)
+
+[node name="tree24" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 120.202, 18.656, 187.931)
+
+[node name="tree25" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 120.202, 18.656, 177.931)
+
+[node name="tree20" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.0040701, -0.000994278, -0.00272867, 0.00128041, 0.00483096, 0.000149549, 0.00260669, -0.000820501, 0.00418711, 147.707, 41.6481, 198.108)
+
+[node name="tree21" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.0040701, -0.000994278, -0.00272867, 0.00128041, 0.00483096, 0.000149549, 0.00260669, -0.000820501, 0.00418711, 144.559, 48.7991, 202.303)
+
+[node name="tree22" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.0040701, -0.000994278, -0.00272867, 0.00128041, 0.00483096, 0.000149549, 0.00260669, -0.000820501, 0.00418711, 149.968, 48.7991, 193.892)
+
+[node name="tree8" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 150.285, 39.124, 168.1)
+
+[node name="tree17" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00360256, -0.000850779, -0.00336121, 0.00128041, 0.00483096, 0.000149549, 0.00322213, -0.000968497, 0.00369863, 139.118, 12.835, 163.47)
+
+[node name="tree18" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00360256, -0.000850779, -0.00336121, 0.00128041, 0.00483096, 0.000149549, 0.00322213, -0.000968497, 0.00369863, 145.799, 12.835, 156.029)
+
+[node name="tree19" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00360256, -0.000850779, -0.00336121, 0.00128041, 0.00483096, 0.000149549, 0.00322213, -0.000968497, 0.00369863, 145.359, 17.835, 161.009)
+
+[node name="tree9" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 147.664, 23.9972, 182.869)
+
+[node name="tree10" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 147.285, 31.1482, 188.1)
+
+[node name="tree11" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 147.285, 31.1482, 178.1)
+
+[node name="tree12" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 150.285, 36.1482, 182.1)
+
+[node name="tree13" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 138.664, 9.17956, 171.911)
+
+[node name="tree14" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 138.285, 16.3306, 177.142)
+
+[node name="tree15" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 138.285, 16.3306, 167.142)
+
+[node name="tree16" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00483326, -0.00128008, -3.03243e-05, 0.00128041, 0.00483096, 0.000149549, -8.98799e-06, -0.000152328, 0.00499767, 141.285, 21.3306, 171.142)
+
+[node name="tree4" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(-0.00181843, 1.13028e-05, 0.00465759, 8.72663e-06, 0.00499998, -8.72664e-06, -0.00465759, 4.95525e-06, -0.00181845, 52.1829, 40.0633, 191.978)
+
+[node name="tree3" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00499998, -8.7114e-06, 8.72663e-06, 8.72663e-06, 0.00499998, -8.72664e-06, -8.7114e-06, 8.74185e-06, 0.00499998, 83.3307, 32.5056, 234.868)
+
+[node name="tree2" parent="trees" instance=ExtResource("7_fp62r")]
+transform = Transform3D(0.00499998, -8.7114e-06, 8.72663e-06, 8.72663e-06, 0.00499998, -8.72664e-06, -8.7114e-06, 8.74185e-06, 0.00499998, 59.239, 27.1145, 164.103)
+
+[node name="XRToolsGrabPointHand" type="Marker3D" parent="."]
+transform = Transform3D(-0.978282, 0, -0.20728, 0, 1, 0, 0.20728, 0, -0.978282, 0, 11.8184, 0)
+script = ExtResource("9_swe5j")
+hand = 1
+editor_preview_mode = 1
+
+[node name="index finger" type="Area3D" parent="XRToolsGrabPointHand"]
+transform = Transform3D(1, 0, -2.22641e-09, 0, 1, 0, 2.21895e-09, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XRToolsGrabPointHand/index finger"]
+transform = Transform3D(1, 0, 1.13802e-08, 0, 1, 0, 1.29984e-08, 0, 1, -0.008613, -0.0123987, 0.0042482)
+shape = SubResource("SphereShape3D_pj6if")
+
+[node name="wind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_gbseb")
+
+[node name="crickets" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_apbre")
+
+[node name="birds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_m17ow")
+
+[node name="#3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_w8f8f")
+
+[node name="nowplaying" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00263675, -0.150004, -0.988683, 0.0171411, 0.988533, -0.150027, 0.999853, -0.0173426, -3.6149e-05, 50.5458, 32.8172, 177.194)
+cast_shadow = 0
+mesh = SubResource("TextMesh_kptpi")
+skeleton = NodePath("../Camera3D/control box/X")
+
+[node name="pause button" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0218517, -0.00651025, -0.0529847, -0.127447, -0.00176492, -0.00906947, -0.000665672, 0.124195, -0.00290633, 50.5898, 32.5652, 177.179)
+mesh = SubResource("BoxMesh_vxqkq")
+skeleton = NodePath("../play button")
+
+[node name="pausearea" type="Area3D" parent="pause button"]
+script = ExtResource("18_iyqbt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pause button/pausearea"]
+transform = Transform3D(1, 2.09724e-09, -1.68559e-10, 5.97565e-08, 1, -4.04079e-10, -8.71597e-08, 3.87438e-08, 1, 0.0337524, 0.0216064, 0.00012207)
+shape = SubResource("BoxShape3D_yqkdd")
+
+[node name="play button" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0250045, 0.0108312, -0.0533592, -0.144184, -0.00233349, -0.0093907, -0.00464638, 0.1307, 0.00425425, 50.6021, 32.5702, 177.018)
+mesh = SubResource("PrismMesh_y5uuh")
+
+[node name="playarea" type="Area3D" parent="play button"]
+script = ExtResource("19_0jt2a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="play button/playarea"]
+transform = Transform3D(1, 1.19894e-08, 2.59518e-08, 5.06122e-10, 1, -1.40344e-08, 1.61359e-08, 4.12894e-08, 1, 0, -0.095459, 0.00012207)
+shape = SubResource("BoxShape3D_u3tcr")
+
+[node name="skip button" type="Node3D" parent="."]
+transform = Transform3D(0.0249905, 0.00742369, -0.0519317, -0.144182, 0.00143823, -0.00899356, 0.000244394, 0.0893842, 0.00445781, 50.6021, 32.5702, 177.394)
+
+[node name="skip1" type="MeshInstance3D" parent="skip button"]
+transform = Transform3D(1, -9.28648e-10, 7.63738e-09, 5.44177e-10, 1, -3.80574e-09, 5.0993e-09, 1.72172e-08, 1, 0, 0, 0)
+mesh = SubResource("PrismMesh_csfa2")
+skeleton = NodePath("../..")
+
+[node name="skip2" type="MeshInstance3D" parent="skip button"]
+transform = Transform3D(1, -9.28648e-10, 7.63738e-09, 5.44177e-10, 1, -3.80574e-09, 5.0993e-09, 1.72172e-08, 1, -0.000686646, -0.663086, -0.0951538)
+mesh = SubResource("PrismMesh_csfa2")
+skeleton = NodePath("../..")
+
+[node name="skip button2" type="Node3D" parent="."]
+transform = Transform3D(0.0249905, 0.00742369, -0.0519317, 0.144176, -0.000445981, 0.00904249, 0.00135604, -0.0893947, -0.0043577, 50.6021, 32.5702, 176.787)
+
+[node name="skip1" type="MeshInstance3D" parent="skip button2"]
+transform = Transform3D(1, -9.28648e-10, 7.63738e-09, 5.44177e-10, 1, -3.80574e-09, 5.0993e-09, 1.72172e-08, 1, 0, 0, 0)
+mesh = SubResource("PrismMesh_csfa2")
+skeleton = NodePath("../..")
+
+[node name="skip2" type="MeshInstance3D" parent="skip button2"]
+transform = Transform3D(1, -1.42803e-09, 1.14018e-08, -1.77953e-09, 1, -2.97364e-09, 2.17177e-09, -7.93499e-09, 1, -0.000671387, -0.663208, -0.0952148)
+mesh = SubResource("PrismMesh_csfa2")
+skeleton = NodePath("../..")
+
+[node name="song image" type="Sprite3D" parent="."]
+transform = Transform3D(-0.000436326, 1.75909e-17, 0.0499981, 1.74393e-17, 0.05, -1.74393e-17, -0.0499981, 1.72865e-17, -0.000436326, 50.5839, 32.8103, 176.821)
+texture = ExtResource("16_wrs76")
+
+[connection signal="area_entered" from="XRToolsGrabPointHand/index finger" to="Camera3D/control box/birds/birdsarea3d" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="XRToolsGrabPointHand/index finger" to="Camera3D/control box/crickets2/cricketsarea3d" method="_on_index_finger_area_entered"]
+[connection signal="area_entered" from="XRToolsGrabPointHand/index finger" to="Camera3D/control box/wind2/windarea3d" method="_on_index_finger_area_entered"]
+[connection signal="area_entered" from="XRToolsGrabPointHand/index finger" to="pause button/pausearea" method="_on_index_finger_area_entered"]
+[connection signal="area_entered" from="XRToolsGrabPointHand/index finger" to="play button/playarea" method="_on_index_finger_area_entered"]
+[connection signal="area_entered" from="XRToolsGrabPointHand/index finger" to="Camera3D/control box/X/xarea" method="_on_index_finger_area_entered"]
+[connection signal="area_entered" from="XRToolsGrabPointHand/index finger" to="Camera3D/control box open_close" method="_on_index_finger_area_entered"]

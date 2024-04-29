@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c24jxy6liaimf"]
+
+[ext_resource type="ArrayMesh" uid="uid://bowxx60ydlaud" path="res://uploads_files_1970932_conifer_macedonian_pine.obj" id="1_yyi0m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5ttf"]
+albedo_color = Color(0.333333, 0.2, 0.0666667, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyh2g"]
+albedo_color = Color(0.105882, 0.396078, 0.0705882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xbkj"]
+albedo_color = Color(0.223529, 0.529412, 0.301961, 1)
+
+[node name="tree" type="MeshInstance3D"]
+transform = Transform3D(0.00499998, -8.7114e-06, 8.72663e-06, 8.72663e-06, 0.00499998, -8.72664e-06, -8.7114e-06, 8.74185e-06, 0.00499998, 59.239, 29.4713, 168.869)
+mesh = ExtResource("1_yyi0m")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_v5ttf")
+surface_material_override/1 = SubResource("StandardMaterial3D_gyh2g")
+surface_material_override/2 = SubResource("StandardMaterial3D_1xbkj")
